@@ -1,6 +1,7 @@
 package dlangina.base;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.is;
 
 import dlangina.models.CreateUserResp;
 import dlangina.models.UpdateUserNameAndJobReq;
@@ -100,5 +101,15 @@ public class Api {
     softly.assertThat(userRegistrationResp.getId()).isEqualTo(4);
     softly.assertThat(userRegistrationResp.getToken()).isEqualTo("QpwL5tke4Pnpja7X4");
     softly.assertAll();
+  }
+
+  @Step
+  public void unsuccessfulRegistrationNoPassword() {
+    given()
+        .body("{\"email\": \"sydney@fife\"}")
+        .post(EndPoints.login)
+        .then()
+        .statusCode(400)
+        .body("error", is("Missing password"));
   }
 }
