@@ -1,6 +1,7 @@
 package dlangina.base;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
 
 import dlangina.models.CreateUserResp;
@@ -111,5 +112,15 @@ public class Api {
         .then()
         .statusCode(400)
         .body("error", is("Missing password"));
+  }
+
+  @Step
+  public void checkEmailWithDomainName(String email) {
+    given()
+        .get(EndPoints.users)
+        .then()
+        .statusCode(200)
+        .body("data.findAll{it.email =~/.*?@reqres.in/}.email.flatten()",
+              hasItem(email));
   }
 }

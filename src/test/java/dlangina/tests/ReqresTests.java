@@ -40,4 +40,10 @@ public class ReqresTests extends TestBase {
   void registrationNoPassword() {
     api.unsuccessfulRegistrationNoPassword();
   }
+
+  @Test
+  @DisplayName("Проверка наличия пользователя по email с опредененным доменным именем")
+  void checkAddedUserByEmail() {
+    api.checkEmailWithDomainName("eve.holt@reqres.in");
+  }
 }
