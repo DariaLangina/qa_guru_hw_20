@@ -36,7 +36,7 @@ public class ReqresTests extends TestBase {
   }
 
   @Test
-  @DisplayName("Проверка невозможной регистрации без указания пароля")
+  @DisplayName("Проверка невозможности регистрации без указания пароля")
   void registrationNoPassword() {
     api.unsuccessfulRegistrationNoPassword();
   }
