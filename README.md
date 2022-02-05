@@ -30,25 +30,6 @@ Jira, Github, Telegram
 * ✅ Проверка невозможности регистрации без указания пароля
 * ✅ Проверка наличия пользователя по email с опредененным доменным именем
 
-Serve report:
-
-```bash
-allure serve build/allure-results
-```
-
-### Запуск в Jenkins
-
-Статистика по запускам <br >
-<p align="center">
-  <img src="images/readme/jenkins1.png">
-</p>
-
-### Отчёт о прохождении автотестов в Allure Report
-
-<p align="center">
-  <img src="images/readme/Allure_Report.png">
-</p>
-
 ### Хранение тестовой документации в Allure TestOps
 
 <p align="center">
@@ -57,6 +38,12 @@ allure serve build/allure-results
 
 <p align="center">
   <img src="images/readme/Allure_TestOps2.png">
+</p>
+
+### Отчёт о прохождении автотестов в Allure Report
+
+<p align="center">
+  <img src="images/readme/Allure_Report.png">
 </p>
 
 ### Интерграция с Jira
@@ -69,6 +56,20 @@ allure serve build/allure-results
 
 <p align="center">
   <img src="images/readme/Telegram_1.png">
+</p>
+
+
+Serve report:
+
+```bash
+allure serve build/allure-results
+```
+
+### Запуск в Jenkins
+
+Статистика по запускам <br >
+<p align="center">
+  <img src="images/readme/jenkins1.png">
 </p>
 
 ### Как запустить
